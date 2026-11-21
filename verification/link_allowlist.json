@@ -1,0 +1,9 @@
+
+{
+  "blocked_hosts": {
+    "direct.mit.edu": "MIT Press pages returned Cloudflare HTTP 403 during the 2026-11-13 manual check."
+  },
+  "blocked_dois": {
+    "10.1177/030631277800800305": "The SAGE DOI is correct, but SAGE Cloudflare blocked automated access during the 2026-11-13 manual check."
+  }
+}

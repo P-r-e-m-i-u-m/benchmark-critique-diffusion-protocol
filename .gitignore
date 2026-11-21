@@ -75,3 +75,7 @@ build/
 *.synctex.gz
 *.out
 *.toc
+
+# Generated link-checker reports
+verification/link_report.json
+verification/link_report.md
