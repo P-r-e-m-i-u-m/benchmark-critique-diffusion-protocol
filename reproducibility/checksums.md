@@ -28,6 +28,15 @@ The generated `analysis/pilot_results.json` is excluded because it contains a
 generation timestamp. The analysis's source hash is recorded inside the JSON and
 checked by the tests.
 
+## Not covered
+
+The human-coding templates in `reproducibility/human_coding/` are committed, but
+they are not frozen research inputs and are not in the manifest. Completed coder
+sheets and the `analysis/human_coding/` outputs are working data: they are
+gitignored and never checksummed. The agreement report records the SHA-256 of the
+two sheets it actually read, so a completed run remains auditable without
+publishing the sheets.
+
 ## Verify
 
 ```powershell

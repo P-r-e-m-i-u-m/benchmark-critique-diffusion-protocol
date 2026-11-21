@@ -80,7 +80,7 @@ Binary adoption = score 3. The pilot produced 1/6 primary-pair full adoption (16
 | Pilot reliability: 12/12 eligibility; 7/8 ordinal; κ 0.78 unweighted / 0.86 linear | **LLM–LLM only** | `pilot/pilot_summary.md` |
 | Base design: 900 invited, 130 eligible, ±5.7 pp, 829.7 h, 16.0 h/week | Verified (recomputed) | `planning/feasibility_workload.md` |
 | 24-week retrieval phase, peak ~21 h/week | Verified (arithmetic) | `planning/execution_roadmap.md` |
-| No human second coder | **Unresolved** | No commitment record |
+| No human second coder | **Unresolved** | Blinded packet and agreement script prepared; no commitment record |
 | General-frame access rate | **Unknown** | Only the purposive 93.1% pilot |
 | OSF registration | **Not created** | No OSF DOI; Zenodo DOI 10.5281/zenodo.24245000 covers the preprint and materials. |
 | EvalPlus bibliographic record | Verified | NeurIPS 2023, DOI 10.52202/075280-0943, pp. 21558–21572 |
@@ -198,7 +198,7 @@ The decision assumes the researcher can protect:
 | 5 | 2026-11-13 | 24-week retrieval phase; 12-month plan | Workload recalculation | Closed |
 | 6 | 2026-11-13 | EMSE primary; DMLR alternative; QSS deferred | Journal verification | Closed |
 | 7 | 2026-11-13 | **NEEDS EXTERNAL INPUT**; C1–C3 by 2026-12-14 | This record | **Open** |
-| 8 |  |  |  |  |
+| 8 | 2026-11-21 | Prepare blinded human-coding packet; strict `paper_key` + `critique` agreement script; report undefined κ as `null` | `reproducibility/human_coding/`; `scripts/agreement.py`; `tests/test_agreement.py` | Closed |
 
 ---
 

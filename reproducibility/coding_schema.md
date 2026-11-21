@@ -83,6 +83,43 @@ These are not human inter-rater reliability. No human second coder participated.
 The full study requires human double-coding of at least 20% of eligible papers,
 calibration, adjudication, and a 10% audit.
 
+### 7.1 Pilot human double-coding package
+
+The repository now contains the preparation for a human reliability check on the
+12 pilot rows:
+
+- `reproducibility/human_coding/README.md`: coder instructions, blinding rules,
+  and the field guide;
+- `reproducibility/human_coding/coder_A.csv` and `coder_B.csv`: blank sheets with
+  the pilot metadata filled and every coding field cleared;
+- `scripts/agreement.py`: the agreement calculator.
+
+The sheets keep `paper_key`, `title`, `venue`, `year`, and `critique`. Coders fill
+`eligible`, `ineligibility_reason`, `score`, `engagement`,
+`independent_remediation`, `adoption_locus`, `evidence_quote`, `notes`,
+`confidence`, `adjudicate`, `access_route`, and `coded_at`. The agreement script
+requires `paper_key`, `critique`, `eligible`, and `score`; it validates
+`ineligibility_reason` when the column is present.
+
+The comparison is strict. A missing or duplicate `paper_key` + `critique` key is
+an error; the script does not silently drop rows or intersect the sheets.
+Eligibility is compared on every row. Ordinal κ is computed only on rows that
+both coders mark eligible. Ineligible rows never receive a score.
+
+The script reports percent agreement, unweighted κ, linear-weighted κ,
+quadratic-weighted κ, PABAK, bootstrap percentile intervals, a confusion matrix,
+and a CSV of disagreements. Weighted κ uses the 0–3 scale, so a 0-versus-3
+disagreement counts more than a 0-versus-1 disagreement.
+
+**Undefined κ.** If expected agreement is 1.0, κ has no denominator. The script
+reports `null` and explains why. It does not substitute 1.00. The pilot's 1.00
+eligibility value was a documented convention for a no-variance LLM–LLM check,
+not an estimate, and it should not be used as a template for human κ.
+
+**What the package does not do.** It cannot verify that the sheets came from two
+independent humans, and it cannot make n=12 precise. The pilot human κ remains
+unavailable until a second human completes the sheet. Until then, the only
+reliability values in this repository are the LLM–LLM values above.
 
 ## Worked coding example
 

@@ -205,7 +205,7 @@ analysis path uses Python 3.11+ and the standard library; pytest is required onl
 for the test suite.
 
 ```shell
-python -m pytest tests -q           # 72 passed
+python -m pytest tests -q           # 115 passed
 python scripts/verify_checksums.py  # 27/27 files verified
 python scripts/analyze_pilot.py     # regenerates the pilot analysis
 ```
@@ -242,12 +242,21 @@ separately from broken links. If Zenodo blocks direct automated access,
 the required Zenodo DOI and record are independently verified through
 DataCite.
 
+The human double-coding package is prepared but not executed. The blinded sheets
+and instructions are in
+[`reproducibility/human_coding/`](reproducibility/human_coding/), and
+[`scripts/agreement.py`](scripts/agreement.py) computes eligibility and ordinal κ
+once both sheets are complete. No human has filled the sheets, so the pilot's κ
+values above remain **LLM–LLM**. Completed sheets and generated agreement
+outputs are gitignored working data, not part of the checksum manifest.
+
 | Document | Purpose |
 |---|---|
 | [`reproducibility/reproduction.md`](reproducibility/reproduction.md) | Full run order and expected values. |
 | [`reproducibility/checksums.md`](reproducibility/checksums.md) | Integrity model and verification procedure. |
 | [`reproducibility/environment.md`](reproducibility/environment.md) | Tested versions and dependency policy. |
 | [`reproducibility/data_dictionary.md`](reproducibility/data_dictionary.md) | Every column in the frozen data and analysis outputs. |
+| [`reproducibility/human_coding/`](reproducibility/human_coding/) | Blinded human-coding instructions and blank coder sheets. |
 | [`manuscript/reproducibility_statement.md`](manuscript/reproducibility_statement.md) | Manuscript-level data and code availability statement. |
 
 ## Limitations and status
@@ -265,7 +274,7 @@ DataCite.
 | Limitation | Consequence |
 |---|---|
 | Purposive 29-paper pilot; 6 primary-pair and 8 all-pair eligible papers | No population prevalence estimate. |
-| No human second coder | κ values are LLM–LLM only, not human reliability. |
+| No human second coder | κ values are LLM–LLM only, not human reliability. The blinded packet and agreement script are ready; recruiting an independent coder is the blocker. |
 | Exact LLM model, prompt, temperature, and raw outputs not preserved | The LLM coding pass is not exactly reproducible; the rubric and coded table are. |
 | Full-scale 900-paper study not executed | No confirmatory hypothesis tests or full-frame estimates. |
 | 335-record feasibility cohort drawn but not coded | Documents a deviation from the planned design; contributes no result. |
@@ -283,27 +292,36 @@ DataCite.
 | Typeset paper | Complete as a 20-page pilot-study preprint; not peer reviewed. |
 | Preprint DOI | Zenodo, [10.5281/zenodo.24245000](https://doi.org/10.5281/zenodo.24245000). |
 | Full-scale data collection | Not executed. |
-| Human reliability | Not available. |
+| Human-coding package | Instructions, two blank sheets, agreement script, and tests complete. No completed human sheets. |
+| Human reliability | Not available. The pilot κ remains LLM–LLM until two independent humans complete the sheets. |
 | OSF registration | Not created; the Zenodo DOI covers the preprint and materials, not a preregistration. |
 | Submission | Not ready; see [`manuscript/submission/submission_checklist.md`](manuscript/submission/submission_checklist.md). |
 
 The next scientific step is the full study: a probability sample from the frozen
 frame, a 50-record access pretest, human double-coding of at least 20% of eligible
 papers, the pre-specified sensitivity analyses, and registration before main
-coding. No further citation-frame retrieval was performed for this repository.
+coding. The immediate human-reliability step is narrower: recruit one independent
+coder, have both coders complete the blinded sheets in
+[`reproducibility/human_coding/`](reproducibility/human_coding/), and run
+`scripts/agreement.py`. That gives a pilot human κ; it does not replace the full
+study's double-coding plan. No further citation-frame retrieval was performed for
+this repository.
 
 ## Data availability
 
 **Included:** the frozen 2,666-cluster frame and its summary and hashes, the
 12-row pilot coding table with short evidence quotes, analysis scripts, generated
-tables and figures, the test suite, and the 335-record feasibility cohort with
-its manifest. The cohort was drawn but **not coded** and contributes no result.
+tables and figures, the test suite, the blank human-coding templates and
+instructions, and the 335-record feasibility cohort with its manifest. The cohort
+was drawn but **not coded** and contributes no result.
 
-**Not included:** publisher PDFs and full-text copies; third-party abstracts
-(`data/cohort_arxiv_metadata.csv`); LLM prompts and raw model outputs; credentials,
-API keys, and local temporary files. Full texts are not redistributed. The
-citation-frame metadata is not relicensed and remains subject to Semantic
-Scholar's terms. See [`reproducibility/licensing.md`](reproducibility/licensing.md).
+**Not included:** publisher PDFs and full-text copies; completed human coder
+sheets and generated agreement outputs (none exist; working data are gitignored);
+third-party abstracts (`data/cohort_arxiv_metadata.csv`); LLM prompts and raw
+model outputs; credentials, API keys, and local temporary files. Full texts are
+not redistributed. The citation-frame metadata is not relicensed and remains
+subject to Semantic Scholar's terms. See
+[`reproducibility/licensing.md`](reproducibility/licensing.md).
 
 ## Citation
 
@@ -349,6 +367,7 @@ been obtained refers to the planned OSF registration, not to this Zenodo DOI.
 | [`rubric_v1.1.md`](rubric_v1.1.md) | Frozen coding instrument and boundary rules. |
 | [`pilot/pilot_coding_table.csv`](pilot/pilot_coding_table.csv) | Authoritative 12-row pilot coding table. |
 | [`pilot/pilot_summary.md`](pilot/pilot_summary.md) | Pilot flow, results, reliability, and caveats. |
+| [`reproducibility/human_coding/`](reproducibility/human_coding/) | Blinded instructions and blank coder sheets for the human reliability check. |
 | [`data/citation_frame_2666.csv`](data/citation_frame_2666.csv) | Frozen 2,666-cluster citation frame. |
 | [`data/frame_summary.json`](data/frame_summary.json) | Frame counts, coverage, and SHA-256 hashes. |
 | [`reproducibility/`](reproducibility/) | Data dictionary, provenance, sampling, environment, licensing, checksums, and reproduction. |

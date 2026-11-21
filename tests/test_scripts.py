@@ -19,6 +19,7 @@ def test_required_scripts_exist(root):
         "analysis_template.py",
         "fetch_cohort.py",
         "analyze_pilot.py",
+        "agreement.py",
         "make_manuscript_tables.py",
         "make_figures.py",
         "verify_checksums.py",

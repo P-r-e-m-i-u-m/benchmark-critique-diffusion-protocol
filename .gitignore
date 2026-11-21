@@ -40,6 +40,12 @@ pilot/pdfs/
 !manuscript/figures/print/*.pdf
 !docs/assets/paper.pdf
 
+# Human-coding working data. The blank templates are tracked; completed sheets
+# and generated agreement outputs are not.
+reproducibility/human_coding/*_completed.csv
+reproducibility/human_coding/*_completed.xlsx
+analysis/human_coding/
+
 # Local retrieval and temporary files
 tmp/
 temp/

@@ -16,6 +16,7 @@ executed. No population prevalence estimate exists.
 | `frame_construction.md` | Raw citation rows to 2,666 title clusters, including hashes. |
 | `sampling.md` | Planned 900-paper design and the documented 335-record feasibility deviation. |
 | `coding_schema.md` | Rubric v1.1 fields, eligibility rules, and score definitions. |
+| `human_coding/` | Blinded instructions and blank coder sheets for the pilot human reliability check. |
 | `environment.md` | Software versions and dependency policy. |
 | `licensing.md` | What is shareable, what is not, and why. |
 | `checksums.md` | How integrity is verified and which inputs are covered. |
@@ -35,6 +36,10 @@ python scripts/analyze_pilot.py
 Run checksum verification before regenerating outputs if you want to compare
 against the committed checksums.
 
+The human-coding packet is prepared but not executed. No human has completed the
+sheets, so the pilot κ remains LLM–LLM. The agreement command is documented in
+`human_coding/README.md` and in `reproduction.md` §4.
+
 ## What is reproducible
 
 - Frame counts, strata, year distribution, and SHA-256 hashes.
@@ -47,6 +52,7 @@ against the committed checksums.
 - The full texts of coded papers (not redistributed).
 - The original LLM prompts, model identifier, temperature, and raw outputs
   (not preserved during the pilot).
-- Human inter-rater reliability (no human second coder).
+- Human inter-rater reliability. The packet is ready, but no human second coder
+  has completed it. The pilot κ values are LLM–LLM.
 - Full-scale prevalence estimates (not collected).
 - The partial feasibility-cohort retrieval (halted; no coding performed).

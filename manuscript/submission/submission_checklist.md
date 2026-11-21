@@ -12,8 +12,9 @@ The table distinguishes what exists from what is missing.
 | Pilot data | **Complete** (12 rows) | `pilot/pilot_coding_table.csv`. |
 | Pilot analysis | **Complete** | `analysis/pilot_results.json`; tests. |
 | Full-scale 900-paper sample | **Not executed** | `reproducibility/sampling.md`. |
-| Human second coder | **Not available** | Blocking for a prevalence claim. |
-| Human reliability statistics | **Not available** | Must not substitute LLM–LLM κ. |
+| Human-coding packet | **Complete** | `reproducibility/human_coding/`: instructions, two blinded blank sheets, agreement script, tests. |
+| Human second coder | **Not recruited** | The packet is ready; recruitment is the blocker. |
+| Human reliability statistics | **Not available** | Must not substitute LLM–LLM κ. Run `scripts/agreement.py` after both sheets are returned. |
 | Pre-specified sensitivity analyses | **Planned, not run** | Paper §14.5; no full data. |
 | OSF registration | **Not created** | Paper §10.6. |
 | DOI | **Obtained** | Zenodo: `10.5281/zenodo.24245000` (preprint and materials). |
@@ -60,11 +61,14 @@ The table distinguishes what exists from what is missing.
 | Licenses present | **Yes** (`LICENSE`, `LICENSE-DATA`) |
 | README status warning | **Yes** |
 | Manuscript status warning | **Yes** |
+| Human-coding templates tracked, completed sheets ignored | **Yes** |
 | No fabricated full-scale results | **Yes** |
 
 ## 5. Hard blockers
 
-1. No human second coder and no human reliability statistics.
+1. No human second coder has been recruited, so there are no human reliability
+   statistics. The packet and agreement script exist; the missing input is a
+   person, not code.
 2. No full-scale sample, coding, or prevalence estimate.
 3. No registration; the Zenodo DOI covers the preprint but is not a preregistration.
 4. The manuscript is not peer reviewed.
