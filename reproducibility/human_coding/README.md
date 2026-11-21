@@ -16,6 +16,8 @@ to put in the manuscript.
 |---|---|
 | `coder_A.csv` | Blank sheet for the first coder. Metadata is filled; coding fields are empty. |
 | `coder_B.csv` | Blank sheet for the second coder. Same metadata, different `coder_id`. |
+| `paper_sources.csv` | Direct open-access and publisher links for the 12 papers. Metadata only, no codes. |
+| `recruitment_note.md` | Ready-to-send invitation and the questions to ask before and after coding. |
 | `../../rubric_v1.1.md` | The coding instrument. Read this first. |
 | `../../reproducibility/coding_schema.md` | Field definitions, eligibility rules, and the score scale. |
 | `../../scripts/agreement.py` | Computes agreement after both sheets are done. |
@@ -58,6 +60,8 @@ Code from the paper, not from the existing table.
 
 - The 12 papers. The sheet gives title, venue, year, and critique. Retrieve the
   full text from the publisher, arXiv, an author copy, or institutional access.
+  `paper_sources.csv` has an open-access link and, where available, a publisher
+  DOI for each row. If a link is dead, search the exact title.
 - Roughly 4–6 hours. Budget about 20 minutes for an eligibility screen and 30
   minutes for an eligible paper. The pilot did not time this precisely, so treat
   the estimate as a planning number, not a quota.
@@ -178,12 +182,12 @@ separately; the CSV only needs a coder ID.
 The author runs:
 
 ```powershell
-python scripts/agreement.py `
-  --coder-a reproducibility/human_coding/coder_A_completed.csv `
-  --coder-b reproducibility/human_coding/coder_B_completed.csv
+python scripts/human_coding_status.py --run
 ```
 
-The script writes a JSON report, a Markdown summary, and a disagreement CSV under
+The status wrapper checks that both completed sheets exist and share exactly the
+same keys before it computes anything. It then calls `scripts/agreement.py`,
+which writes a JSON report, a Markdown summary, and a disagreement CSV under
 `analysis/human_coding/`. It reports:
 
 - eligibility agreement and κ on all 12 rows;

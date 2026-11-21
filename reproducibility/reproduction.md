@@ -75,9 +75,25 @@ The package contains:
 
 - `README.md`: instructions, blinding rules, and the field guide;
 - `coder_A.csv` and `coder_B.csv`: blank sheets with the 12 pilot rows' metadata
-  filled and every coding field empty.
+  filled and every coding field empty;
+- `paper_sources.csv`: open-access and publisher links for all 12 papers, with no
+  coding information;
+- `recruitment_note.md`: a ready-to-send invitation and the independence questions
+  to ask before coding.
 
-After both completed sheets exist, run:
+After both completed sheets exist, run the status wrapper:
+
+```powershell
+python scripts/human_coding_status.py --run
+```
+
+It checks that both sheets are present and share exactly the same keys, prints a
+short readiness summary, then runs the agreement calculation. To check readiness
+without computing statistics:
+
+```powershell
+python scripts/human_coding_status.py
+```
 
 ```powershell
 python scripts/agreement.py `

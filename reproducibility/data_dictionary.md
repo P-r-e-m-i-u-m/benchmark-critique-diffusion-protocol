@@ -138,3 +138,11 @@ A `kappa` value of `null` means expected agreement was 1.0, so κ is undefined;
 reason, engagement, confidence, evidence quote, and notes, plus `score_gap` for
 score disagreements.
 
+## 10. `reproducibility/human_coding/paper_sources.csv`
+
+Retrieval aid for the two coders. It contains `paper_key`, `critique`, `title`,
+`doi`, `arxiv`, `open_access_url`, and `publisher_url` for the 12 pilot papers.
+It contains no eligibility or adoption information, so it can be shared without
+unblinding either coder. Links were checked on 21 November 2026; a dead link is
+not a reason to skip a row, and the exact title is the fallback search key.
+

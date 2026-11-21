@@ -205,7 +205,7 @@ analysis path uses Python 3.11+ and the standard library; pytest is required onl
 for the test suite.
 
 ```shell
-python -m pytest tests -q           # 115 passed
+python -m pytest tests -q           # 119 passed
 python scripts/verify_checksums.py  # 27/27 files verified
 python scripts/analyze_pilot.py     # regenerates the pilot analysis
 ```
@@ -242,13 +242,16 @@ separately from broken links. If Zenodo blocks direct automated access,
 the required Zenodo DOI and record are independently verified through
 DataCite.
 
-The human double-coding package is prepared but not executed. The blinded sheets
-and instructions are in
-[`reproducibility/human_coding/`](reproducibility/human_coding/), and
-[`scripts/agreement.py`](scripts/agreement.py) computes eligibility and ordinal κ
-once both sheets are complete. No human has filled the sheets, so the pilot's κ
-values above remain **LLM–LLM**. Completed sheets and generated agreement
-outputs are gitignored working data, not part of the checksum manifest.
+### Human double-coding packet
+
+The human double-coding package is prepared but not executed. The blinded sheets,
+a verified link list for all 12 papers, and instructions are in
+[`reproducibility/human_coding/`](reproducibility/human_coding/).
+[`scripts/human_coding_status.py`](scripts/human_coding_status.py) checks that both
+completed sheets exist and share the same keys; add `--run` to compute agreement in
+the same step. No human has filled the sheets, so the pilot's κ values above remain
+**LLM–LLM**. Completed sheets and generated agreement outputs are gitignored working
+data, not part of the checksum manifest.
 
 | Document | Purpose |
 |---|---|
@@ -256,7 +259,7 @@ outputs are gitignored working data, not part of the checksum manifest.
 | [`reproducibility/checksums.md`](reproducibility/checksums.md) | Integrity model and verification procedure. |
 | [`reproducibility/environment.md`](reproducibility/environment.md) | Tested versions and dependency policy. |
 | [`reproducibility/data_dictionary.md`](reproducibility/data_dictionary.md) | Every column in the frozen data and analysis outputs. |
-| [`reproducibility/human_coding/`](reproducibility/human_coding/) | Blinded human-coding instructions and blank coder sheets. |
+| [`reproducibility/human_coding/`](reproducibility/human_coding/) | Blinded human-coding instructions, blank coder sheets, and paper links. |
 | [`manuscript/reproducibility_statement.md`](manuscript/reproducibility_statement.md) | Manuscript-level data and code availability statement. |
 
 ## Limitations and status
@@ -311,9 +314,9 @@ this repository.
 
 **Included:** the frozen 2,666-cluster frame and its summary and hashes, the
 12-row pilot coding table with short evidence quotes, analysis scripts, generated
-tables and figures, the test suite, the blank human-coding templates and
-instructions, and the 335-record feasibility cohort with its manifest. The cohort
-was drawn but **not coded** and contributes no result.
+tables and figures, the test suite, the blank human-coding templates, instructions,
+and verified paper links, and the 335-record feasibility cohort with its manifest.
+The cohort was drawn but **not coded** and contributes no result.
 
 **Not included:** publisher PDFs and full-text copies; completed human coder
 sheets and generated agreement outputs (none exist; working data are gitignored);

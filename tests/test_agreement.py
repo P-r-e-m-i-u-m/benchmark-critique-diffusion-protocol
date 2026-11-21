@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 
 import agreement
+import human_coding_status
 
 
 MINIMAL_FIELDS = ("paper_key", "critique", "eligible", "score")
@@ -587,3 +588,91 @@ def test_human_coding_readme_keeps_the_blinding_rules(root):
     assert "Do not use an LLM to assign scores" in text
     assert "coder_A_completed.csv" in text
     assert "coder_B_completed.csv" in text
+
+
+def test_status_reports_missing_completed_sheets(tmp_path, capsys):
+    exit_code = human_coding_status.main(
+        [
+            "--coder-a",
+            str(tmp_path / "coder_A_completed.csv"),
+            "--coder-b",
+            str(tmp_path / "coder_B_completed.csv"),
+        ]
+    )
+
+    assert exit_code == 1
+    captured = capsys.readouterr()
+    assert "not ready" in captured.out
+    assert "coder_A_completed.csv" in captured.out
+    assert "Do not create these files" in captured.out
+
+
+def test_status_rejects_an_invalid_sheet(tmp_path, capsys):
+    rows = [
+        {
+            "paper_key": "p01",
+            "critique": "evalplus",
+            "eligible": "",
+            "score": "",
+        }
+    ]
+    a_path = write_sheet(tmp_path / "a.csv", rows)
+    b_path = write_sheet(tmp_path / "b.csv", rows)
+
+    exit_code = human_coding_status.main(
+        ["--coder-a", str(a_path), "--coder-b", str(b_path)]
+    )
+
+    assert exit_code == 2
+    assert "invalid" in capsys.readouterr().err
+
+
+def test_status_ready_then_run_writes_agreement(tmp_path, capsys):
+    a_path, b_path = eligibility_pair(tmp_path)
+    out_dir = tmp_path / "out"
+
+    ready_code = human_coding_status.main(
+        ["--coder-a", str(a_path), "--coder-b", str(b_path)]
+    )
+    assert ready_code == 0
+    ready_output = capsys.readouterr().out
+    assert "ready" in ready_output
+    assert "rows both marked eligible" in ready_output
+    assert "python scripts/human_coding_status.py --run" in ready_output
+
+    run_code = human_coding_status.main(
+        [
+            "--coder-a",
+            str(a_path),
+            "--coder-b",
+            str(b_path),
+            "--out-dir",
+            str(out_dir),
+            "--run",
+        ]
+    )
+    assert run_code == 0
+    assert (out_dir / "agreement_report.json").is_file()
+    assert (out_dir / "agreement_report.md").is_file()
+    assert (out_dir / "agreement_disagreements.csv").is_file()
+
+
+def test_paper_sources_cover_the_pilot_without_coding_fields(root):
+    with (root / "pilot" / "pilot_coding_table.csv").open(
+        encoding="utf-8-sig", newline=""
+    ) as handle:
+        pilot = list(csv.DictReader(handle))
+    with (
+        root / "reproducibility" / "human_coding" / "paper_sources.csv"
+    ).open(encoding="utf-8-sig", newline="") as handle:
+        sources = list(csv.DictReader(handle))
+
+    assert len(sources) == len(pilot)
+    assert [row["paper_key"] for row in sources] == [
+        row["paper_key"] for row in pilot
+    ]
+    for source in sources:
+        assert source["open_access_url"].startswith("https://")
+        for hidden in ("eligible", "score", "notes", "evidence_quote"):
+            assert hidden not in source
+
