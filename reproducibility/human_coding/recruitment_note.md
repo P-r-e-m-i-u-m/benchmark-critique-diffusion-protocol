@@ -3,6 +3,8 @@
 Ready to send. Replace the bracketed bits. Do not send the rubric, the pilot
 codes, or the manuscript's results section with the invitation. The packet goes
 out only after the person agrees and confirms they have not seen those materials.
+A public version of the call is in [`call_for_coders.md`](call_for_coders.md) and
+is pinned as repository issue #14.
 
 ## Short version
 

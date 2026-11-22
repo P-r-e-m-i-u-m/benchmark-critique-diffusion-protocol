@@ -6,6 +6,14 @@
 **Assumed end:** 29 November 2027 (week 52); 30 November 2027 reserved as a float day  
 **Base design:** 900 invited = 135 SWE-bench+ census + 765 EvalPlus-only sample; target 120 eligible; cap 1,200 invited.
 
+> **Update 22 November 2026 — registration route.** The project now targets the
+> ICSME 2027 Registered Reports track, run in conjunction with EMSE. Under that
+> route the accepted Stage 1 protocol is the registration; C3 can be met by an
+> accepted Stage 1 reference instead of an OSF DOI. The OSF-specific wording
+> below is retained for the independent route. The gate itself is unchanged: no
+> main sample is drawn and no coding starts until a registration reference and a
+> committed human coder exist. Gate 0 still fails today because neither exists.
+
 ---
 
 ## 1. Calendar assumptions
@@ -119,7 +127,7 @@
 
 1. **C1:** signed email/letter from the human second coder committing to 6 h calibration, at least 19.5 h of blind coding (26 papers at 45 min), and 6 h adjudication.
 2. **C2:** 50-record access pretest log with route, outcome, failure reason, and date; access rate ≥70% (or 50–70% with an ILL plan).
-3. **C3:** OSF registration DOI containing protocol v1.0, rubric v1.1, sampling script and seed, analysis plan, and frame hash.
+3. **C3:** Registration reference containing protocol v1.0, rubric v1.1, sampling script and seed, analysis plan, and frame hash — an OSF DOI, or the accepted Stage 1 protocol under the ICSME/EMSE RR route.
 
 **If met:** decision flips to **READY TO EXECUTE**; start calibration on 2026-12-15.  
 **If not met:** decision remains **NEEDS EXTERNAL INPUT**; do not start main coding. See `planning/decision_record.md`.
@@ -262,7 +270,7 @@
 
 - [ ] C1 second coder committed in writing.
 - [ ] C2 access pretest ≥70% (or 50–70% with an ILL plan).
-- [ ] C3 OSF DOI created.
+- [ ] C3 registration reference created (OSF DOI or accepted Stage 1).
 - [ ] Frame CSV hash verified against `6a0a374b…`.
 - [ ] Sampling seed and script committed; sample list frozen.
 - [ ] Library/ILL route confirmed.

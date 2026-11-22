@@ -5,10 +5,12 @@ Report on Documented Adoption of EvalPlus and SWE-bench+
 
 **Author:** Syed Abdul Aman, Independent Researcher
 
-**Target:** ICSME 2027 Registered Reports (primary). ESEM 2027 Registered Reports
-is a format-compatible fallback, but its track details were not verifiable at the
-time of writing (the track URL returned 404); this outline follows the verified
-ICSME 2027 requirements.
+**Target:** ICSME 2027 Registered Reports, run in conjunction with *Empirical
+Software Engineering* (EMSE). Stage 1 is reviewed by the ICSME 2027 RR track;
+Stage 2 is submitted to EMSE. Only confirmatory studies are considered for
+In-Principal Acceptance; the primary hypotheses here are confirmatory. ESEM 2027
+is not asserted as a fallback: its track page returned 404 at the time of
+writing.
 
 **Format:** IEEE two-column conference, `\documentclass[conference]{IEEEtran}`,
 6 pages plus 1 additional page of references, single-blind.
@@ -494,9 +496,10 @@ exploratory regression is pinned and disclosed; it is not part of the primary
 analysis. The analysis JSON records the SHA-256 of the coding table. A
 reproducibility check recomputes every number in the abstract and main tables
 from the coding CSV. The accepted Stage 1 protocol is the registration; no OSF
-registration exists. Deviations are logged with date, reason, and impact and are
-reported in Stage 2. The reporting follows the transparency recommendations in
-[16].
+registration exists. Stage 2 is submitted to EMSE, and the ICSME track expects
+all deviations to be documented in the Stage 2 paper. Deviations are logged with
+date, reason, and impact and are reported in Stage 2. The reporting follows the
+transparency recommendations in [16].
 
 ---
 
@@ -542,12 +545,13 @@ contribution, not honorary convention.
 
 ## 8. Timeline, feasibility, and deliverables
 
-ICSME 2027 is scheduled for 7–11 September 2027. The Registered Reports track
-requires at most 6 pages plus 1 page of references, IEEE two-column conference
-format, single-blind review, and confirmatory studies are eligible for
-In-Principal Acceptance. The Stage 1 deadline and submission system were listed
-as TBA at the time of writing; the calendar anchor will be fixed when the track
-publishes them.
+ICSME 2027 is scheduled for 7–11 September 2027. Its Registered Reports track is
+run in conjunction with EMSE. Stage 1 requires at most 6 pages plus 1 page of
+references in IEEE two-column conference format, under single-blind review; only
+confirmatory studies are eligible for In-Principal Acceptance, and Stage 2 is
+submitted to EMSE. The Stage 1 deadline and EasyChair link were listed as TBA on
+22 November 2026; the calendar anchor will be fixed when the track publishes
+them.
 
 The timeline is expressed relative to Stage 1 acceptance (M0). Calibration and
 coder training run in M0–M1. Retrieval, screening, and coding run for 24 weeks in
@@ -564,7 +568,7 @@ covers review response and contingency in M9–M12. Table 4 summarizes the gates
 | Retrieval, screening, coding | M1–M7 | 900 invited in four blocks; add 100-record blocks to cap 1,200 | ≥120 eligible or cap reached |
 | Reliability | M6–M7 | 20% blind double-code; adjudication | 100% coded; reliability report |
 | Analysis | M7–M8 | Primary, pair-specific, sensitivity, bounds | Every number recomputes |
-| Stage 2 writing | M8–M9 | Draft, review, deposit | Submitted |
+| Stage 2 writing | M8–M9 | Draft; internal review; deposit | Submitted to EMSE |
 | Buffer | M9–M12 | Review response; contingency | — |
 
 The base-case workload is about 830 hours over 12 months (16 hours per week),
@@ -578,10 +582,11 @@ constraint, not a reason to overstate precision.
 
 The deliverables are the frozen frame and hash, the accepted Stage 1 protocol,
 the calibration report, the coding table with evidence quotes, the reliability
-report, the analysis scripts and reproducibility log, the Stage 2 manuscript, and
-a public deposit. The study currently has no cash budget; software is open
-source, the second coder is unpaid at the time of writing, and access relies on
-open access, arXiv, author copies, and any library access the author can secure.
+report, the analysis scripts and reproducibility log, the Stage 2 manuscript
+submitted to EMSE, and a public deposit. The study currently has no cash budget;
+software is open source, the second coder is unpaid at the time of writing, and
+access relies on open access, arXiv, author copies, and any library access the
+author can secure.
 
 ---
 
@@ -682,15 +687,21 @@ Behaviour*, vol. 1, p. 0021, 2017.
 
 ## Appendix C. Open items before submission (not part of the 6 pages)
 
-1. **ICSME 2027 RR deadline and submission system.** Listed as TBA. Check the
-   track page before submitting; do not invent a date.
-2. **ESEM 2027 RR track.** The track URL returned 404. Do not assert ESEM
-   requirements; use the verified ICSME requirements. If ESEM is confirmed with
+1. **ICSME 2027 RR deadline and EasyChair link.** Both were still listed as TBA
+   on 22 November 2026. The track is run with EMSE, and only confirmatory studies
+   are eligible for In-Principal Acceptance. The verified details are recorded in
+   `verification/registered_report_requirements.md`. Check the track page before
+   submitting; do not invent a date or link.
+2. **ESEM 2027 RR track.** The track URL returned 404. The verified target is
+   ICSME/EMSE; do not assert ESEM requirements. If ESEM is confirmed with
    different limits, revise the page budget.
 3. **Human second coder.** Not yet secured. This is a hard gate. The recruitment
-   note, blinding packet, and status runner are ready; the coder is not.
-4. **OSF registration.** Not created. The accepted Stage 1 protocol is the
-   registration; do not claim an OSF DOI.
+   note, blinding packet, and status runner are ready, and a public call is pinned
+   as repository issue #14; the coder is not yet secured.
+4. **Registration route.** No OSF registration, by design. The accepted Stage 1
+   protocol is the registration; do not claim an OSF DOI and do not create a
+   retrospective OSF record for the pilot. See `registration_plan.md` for the
+   package and sequence.
 5. **Timeline fit.** If the Stage 2 deadline is shorter than 9 months after Stage
    1 acceptance, use the reduced design or a journal RR; do not compress the
    900-paper design.

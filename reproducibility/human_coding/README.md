@@ -2,6 +2,8 @@
 
 **Status:** templates only. No human coder has completed these sheets yet. The
 pilot's κ values remain **LLM–LLM** and are not human inter-rater reliability.
+A public recruitment call is pinned as repository issue #14 and written up in
+[`call_for_coders.md`](call_for_coders.md).
 
 This folder is the packet for a human reliability check on the 12-paper pilot. It
 is not a new prevalence study. The question is narrow: can two humans apply rubric
@@ -18,6 +20,7 @@ to put in the manuscript.
 | `coder_B.csv` | Blank sheet for the second coder. Same metadata, different `coder_id`. |
 | `paper_sources.csv` | Direct open-access and publisher links for the 12 papers. Metadata only, no codes. |
 | `recruitment_note.md` | Ready-to-send invitation and the questions to ask before and after coding. |
+| `call_for_coders.md` | Public-facing call with independence requirements and how to apply. |
 | `../../rubric_v1.1.md` | The coding instrument. Read this first. |
 | `../../reproducibility/coding_schema.md` | Field definitions, eligibility rules, and the score scale. |
 | `../../scripts/agreement.py` | Computes agreement after both sheets are done. |

@@ -11,13 +11,14 @@ The table distinguishes what exists from what is missing.
 | Coding rubric | **Complete** (v1.1) | `rubric_v1.1.md`. |
 | Pilot data | **Complete** (12 rows) | `pilot/pilot_coding_table.csv`. |
 | Pilot analysis | **Complete** | `analysis/pilot_results.json`; tests. |
-| Full-scale 900-paper sample | **Not executed** | `reproducibility/sampling.md`. |
-| Human-coding packet | **Complete** | `reproducibility/human_coding/`: instructions, two blinded blank sheets, agreement script, tests. |
-| Human second coder | **Not recruited** | The packet is ready; recruitment is the blocker. |
+| Full-scale 900-paper sample | **Not executed** | `reproducibility/sampling.md`; the draw is gated on Stage 1 acceptance. |
+| Stage 1 Registered Report outline | **Draft complete** | `manuscript/registered_report/icsme_esem_2027_stage1_outline.md`; 6+1 page budget. |
+| Registration route | **No OSF registration, by design** | The accepted Stage 1 protocol is the registration; see `manuscript/registered_report/registration_plan.md`. |
+| Human-coding packet | **Complete** | `reproducibility/human_coding/`: instructions, two blinded blank sheets, agreement script, tests, public call. |
+| Human second coder | **Not recruited** | The packet and pinned call are ready; recruitment is the blocker. |
 | Human reliability statistics | **Not available** | Must not substitute LLM–LLM κ. Run `scripts/agreement.py` after both sheets are returned. |
 | Pre-specified sensitivity analyses | **Planned, not run** | Paper §14.5; no full data. |
-| OSF registration | **Not created** | Paper §10.6. |
-| DOI | **Obtained** | Zenodo: `10.5281/zenodo.24245000` (preprint and materials). |
+| DOI | **Obtained (preprint)** | Zenodo: `10.5281/zenodo.24245000` (preprint and materials). Not a registration DOI. |
 
 ## 2. Manuscript package
 
@@ -49,6 +50,21 @@ The table distinguishes what exists from what is missing.
 | Fee/APC verified | Hybrid; Open Choice amount not stated | No fees | Hybrid | **Unresolved** |
 | Live-page re-verification at submission | Pending | Pending | Pending | Pending |
 
+### 3.1 Registered Report route (ICSME 2027 / EMSE)
+
+| Check | Status | Notes |
+|---|---|---|
+| Track verified | **Yes** (22 Nov 2026) | ICSME 2027 RR is run with EMSE; Stage 2 is submitted to EMSE. |
+| Page limit | **Verified** | 6 pages plus 1 reference page; strict. |
+| Format | **Verified** | IEEE two-column, `\documentclass[conference]{IEEEtran}`. |
+| Review model | **Verified** | Single-blind. |
+| Confirmatory eligibility | **Verified** | Only confirmatory studies are eligible for IPA; the design is confirmatory (H1/H3). |
+| AI disclosure | **Required** | IEEE policy; identify the system and the sections that used it. |
+| Stage 1 deadline | **TBA** | Re-check the track page; do not invent a date. |
+| EasyChair link | **TBA** | Re-check the track page. |
+| Stage 1 outline | **Draft** | 250-word abstract, 17 references, 6+1 page budget. |
+| Registration package | **Planned** | `manuscript/registered_report/registration_plan.md`; frozen at acceptance. |
+
 ## 4. Repository checks
 
 | Item | Status |
@@ -67,10 +83,14 @@ The table distinguishes what exists from what is missing.
 ## 5. Hard blockers
 
 1. No human second coder has been recruited, so there are no human reliability
-   statistics. The packet and agreement script exist; the missing input is a
-   person, not code.
+   statistics. The packet, agreement script, and public call exist; the missing
+   input is a person, not code.
 2. No full-scale sample, coding, or prevalence estimate.
-3. No registration; the Zenodo DOI covers the preprint but is not a preregistration.
+3. No Stage 1 submission or acceptance, so no accepted protocol and no
+   registration reference. The Stage 1 deadline and EasyChair link are TBA. The
+   Zenodo DOI covers the preprint but is not a registration DOI. An OSF
+   registration is deliberately not used for the RR route; the accepted Stage 1
+   protocol is the registration.
 4. The manuscript is not peer reviewed.
 
 ## 6. Acceptable alternative

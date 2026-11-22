@@ -35,6 +35,23 @@ a protocol amendment.
 **Not executed.** No 900-paper sample was drawn, no main coding began, and no
 full-scale estimate exists.
 
+The draw is gated on the registration route. Under the ICSME 2027 / EMSE
+Registered Report route, the accepted Stage 1 protocol is the registration; an
+OSF DOI is not required. Under an independent route, an OSF DOI is required
+before the draw. `scripts/sample_frame.py` accepts either route:
+
+```
+python scripts/sample_frame.py --design registered \
+    --frame data/citation_frame_2666.csv \
+    --out data/sample_900.csv --seed <committed-seed> \
+    --stage1-acceptance <accepted-stage1-reference>
+```
+
+`--allow-unregistered` exists only for a labelled local dry run. It must not be
+used for the study sample. The 900-row draw is covered by `tests/test_sampling.py`:
+the test draws with a placeholder seed into a temporary directory and checks the
+135 + 765 split and the design weight, but commits no sample.
+
 ## 2. Pilot design
 
 The pilot is a purposive 29-paper access frame, not a probability sample. It was
@@ -73,5 +90,11 @@ manuscript. It is retained so the deviation is auditable.
 
 `scripts/sample_frame.py` implements the stratified draw. Because the planned
 900-paper sample was never executed, running it now produces a new draw and must
-not be described as the study's sample. The 335-record cohort can be regenerated
-from the manifest and seed.
+not be described as the study's sample. A registered-route run requires either
+`--osf-doi` or `--stage1-acceptance`; a run without either is refused. The
+335-record cohort can be regenerated from the manifest and seed; it predates the
+Stage 1 gate and is labelled as an unregistered feasibility deviation.
+
+The frame hash and the seed are the two values that make the draw auditable. The
+seed is committed only when the registration is accepted, and the resulting
+manifest records the registration route and reference alongside the frame hash.

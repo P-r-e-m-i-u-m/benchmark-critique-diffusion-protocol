@@ -7,6 +7,13 @@
 **Review date:** 14 December 2026  
 **Related files:** `PROTOCOL.md`, `rubric_v1.1.md`, `planning/feasibility_workload.md`, `planning/execution_roadmap.md`, `planning/risk_register.md`, `verification/source_verification_log.md`
 
+> **Update 22 November 2026.** Status remains **NEEDS EXTERNAL INPUT**. The
+> project now targets the ICSME 2027 / EMSE Registered Report route. For that
+> route, C3 is an accepted Stage 1 protocol, not an OSF DOI; no OSF registration
+> will be created for the pilot because that would be retrospective. C1 (human
+> coder) and C2 (access pretest) are still unmet, and no Stage 1 report has been
+> submitted or accepted. No main sample has been drawn.
+
 ---
 
 ## 1. Decision
@@ -20,7 +27,7 @@ The scientific design is specified, the frame is built and frozen, the rubric is
 - Completing the Gate 0 checklist.
 - Sending the second-coder invitation and negotiating hours.
 - Running the 50-record access pretest with a separate seed.
-- Creating the OSF registration and depositing the protocol, rubric, frame, and scripts.
+- Creating an OSF registration, or preparing the Stage 1 submission under the ICSME/EMSE RR route, and depositing the protocol, rubric, frame, and scripts when the route permits.
 - Preparing calibration packets and the coding form.
 
 **What this decision does not authorize**

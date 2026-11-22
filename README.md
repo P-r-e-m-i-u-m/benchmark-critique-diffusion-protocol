@@ -10,6 +10,8 @@
 
 **Errata:** [`ERRATA.md`](ERRATA.md) records the correction of the pre-deposit “no DOI” wording; the deposited PDF is unchanged.
 
+**Seeking an independent coder:** the pilot reliability check needs one human coder for 12 papers, about 4–6 hours, unpaid. See the [public call](reproducibility/human_coding/call_for_coders.md) or the [pinned issue](https://github.com/P-r-e-m-i-u-m/benchmark-critique-diffusion-protocol/issues/14).
+
 **Citation metadata:** The root `CITATION.cff` powers GitHub's "Cite this repository" panel. Keep it consistent with [`docs/cite.bib`](docs/cite.bib) and the Zenodo record when citation metadata changes.
 
 <p align="center">
@@ -369,20 +371,20 @@ for the full correction and the affected locations.
 | [`manuscript/tables/`](manuscript/tables/) | Six generated tables in Markdown and CSV. |
 | [`manuscript/figures/`](manuscript/figures/) | Three generated SVG figures and source CSVs. |
 | [`manuscript/submission/`](manuscript/submission/) | Venue comparison, cover-letter draft, checklist, and reviewer expertise. |
-| [`manuscript/registered_report/`](manuscript/registered_report/) | Stage 1 Registered Report outline for ICSME/ESEM 2027. |
+| [`manuscript/registered_report/`](manuscript/registered_report/) | Stage 1 outline for ICSME/EMSE 2027 and the registration plan. |
 | [`docs/`](docs/) | Static research website, published with GitHub Pages from `main` `/docs`. |
 | [`PROTOCOL.md`](PROTOCOL.md) | Research protocol and planned full-scale design. |
 | [`rubric_v1.1.md`](rubric_v1.1.md) | Frozen coding instrument and boundary rules. |
 | [`pilot/pilot_coding_table.csv`](pilot/pilot_coding_table.csv) | Authoritative 12-row pilot coding table. |
 | [`pilot/pilot_summary.md`](pilot/pilot_summary.md) | Pilot flow, results, reliability, and caveats. |
-| [`reproducibility/human_coding/`](reproducibility/human_coding/) | Blinded instructions and blank coder sheets for the human reliability check. |
+| [`reproducibility/human_coding/`](reproducibility/human_coding/) | Blinded instructions, blank coder sheets, and the public coder call. |
 | [`data/citation_frame_2666.csv`](data/citation_frame_2666.csv) | Frozen 2,666-cluster citation frame. |
 | [`data/frame_summary.json`](data/frame_summary.json) | Frame counts, coverage, and SHA-256 hashes. |
 | [`reproducibility/`](reproducibility/) | Data dictionary, provenance, sampling, environment, licensing, checksums, and reproduction. |
 | [`scripts/`](scripts/) | Frame construction, sampling, pilot analysis, table and figure generation, and checksum verification. |
 | [`tests/`](tests/) | Integrity and consistency tests for the frame, pilot, tables, figures, manuscript, and research website. |
 | [`verification/`](verification/) | Source verification and journal-requirement records. |
-| [`planning/`](planning/) | Feasibility, roadmap, risks, and decision record. |
+| [`planning/`](planning/) | Feasibility, roadmap, risks, decision record, and Stage 2 readiness. |
 | [`RESEARCH_PORTFOLIO.md`](RESEARCH_PORTFOLIO.md) | One-page research portfolio summary. |
 
 ## Licenses

@@ -17,15 +17,23 @@ Safety
 ------
 * The frame SHA-256 is checked before sampling. A mismatch aborts.
 * The output file is never overwritten unless --force is given.
-* The ``registered`` design requires an OSF DOI unless
-  ``--allow-unregistered`` is supplied. The feasibility design records that
-  it is a deviation from the registered sample.
+* The ``registered`` design requires a registration reference: an OSF DOI
+  (``--osf-doi``) or an accepted Stage 1 protocol under the ICSME/EMSE
+  Registered Report route (``--stage1-acceptance``). ``--allow-unregistered``
+  is only for local dry runs and labels the output as unregistered.
+* The feasibility design records that it is a deviation from the registered
+  sample.
 
 Usage
 -----
     python scripts/sample_frame.py --design feasibility \
         --frame data/citation_frame_2666.csv \
         --out data/cohort_feasibility.csv --seed 20261113
+
+    python scripts/sample_frame.py --design registered \
+        --frame data/citation_frame_2666.csv \
+        --out data/sample_900.csv --seed 20261113 \
+        --stage1-acceptance <reference>
 """
 
 from __future__ import annotations
@@ -115,6 +123,11 @@ def main() -> int:
     parser.add_argument("--seed", type=int, required=True)
     parser.add_argument("--expected-sha256", default=FRAME_SHA256)
     parser.add_argument("--osf-doi", default=None)
+    parser.add_argument(
+        "--stage1-acceptance",
+        default=None,
+        help="Reference for an accepted Stage 1 protocol (ICSME/EMSE RR route).",
+    )
     parser.add_argument("--allow-unregistered", action="store_true")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
@@ -133,10 +146,12 @@ def main() -> int:
         )
         return 3
 
-    if args.design == "registered" and not args.osf_doi and not args.allow_unregistered:
+    registration_reference = args.osf_doi or args.stage1_acceptance
+    if args.design == "registered" and not registration_reference and not args.allow_unregistered:
         print(
-            "The registered design requires an OSF DOI (C3). "
-            "Use --osf-doi or --allow-unregistered for a local dry run.",
+            "The registered design requires a registration reference: an OSF DOI "
+            "(--osf-doi) or an accepted Stage 1 protocol (--stage1-acceptance). "
+            "Use --allow-unregistered only for a local dry run.",
             file=sys.stderr,
         )
         return 4
@@ -196,6 +211,14 @@ def main() -> int:
         "frame_sha256": actual_hash,
         "seed": args.seed,
         "osf_doi": args.osf_doi,
+        "registration": {
+            "route": (
+                "osf" if args.osf_doi
+                else "stage1" if args.stage1_acceptance
+                else "unregistered"
+            ),
+            "reference": registration_reference,
+        },
         "sampled_utc": datetime.now(timezone.utc).isoformat(),
         "population": dict(counts),
         "sample": {
