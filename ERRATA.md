@@ -10,7 +10,7 @@
 ## 1. Summary
 
 The v1.0 manuscript was frozen on 13 November 2026, two days before the
-Zenodo deposit. Three passages say, without qualification, that no DOI has been
+Zenodo deposit. Two passages say, without qualification, that no DOI has been
 obtained. Those statements were accurate when written: no DOI existed on
 13 November. They became misleading on 15 November, when the deposit itself
 assigned a DOI. Read literally in the deposited record, they contradict the
