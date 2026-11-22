@@ -8,6 +8,8 @@
 
 **DOI:** [10.5281/zenodo.24245000](https://doi.org/10.5281/zenodo.24245000) · **Zenodo record:** [zenodo.org/records/24245000](https://zenodo.org/records/24245000)
 
+**Errata:** [`ERRATA.md`](ERRATA.md) records the correction of the pre-deposit “no DOI” wording; the deposited PDF is unchanged.
+
 **Citation metadata:** The root `CITATION.cff` powers GitHub's "Cite this repository" panel. Keep it consistent with [`docs/cite.bib`](docs/cite.bib) and the Zenodo record when citation metadata changes.
 
 <p align="center">
@@ -352,6 +354,8 @@ If you use this material, cite the preprint and preserve its pilot status:
 
 Section 10.6 of the paper predates the deposit: its statement that no DOI has
 been obtained refers to the planned OSF registration, not to this Zenodo DOI.
+The frozen manuscript and deposited PDF are unchanged; see [`ERRATA.md`](ERRATA.md)
+for the full correction and the affected locations.
 
 ## Repository map
 
@@ -365,6 +369,7 @@ been obtained refers to the planned OSF registration, not to this Zenodo DOI.
 | [`manuscript/tables/`](manuscript/tables/) | Six generated tables in Markdown and CSV. |
 | [`manuscript/figures/`](manuscript/figures/) | Three generated SVG figures and source CSVs. |
 | [`manuscript/submission/`](manuscript/submission/) | Venue comparison, cover-letter draft, checklist, and reviewer expertise. |
+| [`manuscript/registered_report/`](manuscript/registered_report/) | Stage 1 Registered Report outline for ICSME/ESEM 2027. |
 | [`docs/`](docs/) | Static research website, published with GitHub Pages from `main` `/docs`. |
 | [`PROTOCOL.md`](PROTOCOL.md) | Research protocol and planned full-scale design. |
 | [`rubric_v1.1.md`](rubric_v1.1.md) | Frozen coding instrument and boundary rules. |

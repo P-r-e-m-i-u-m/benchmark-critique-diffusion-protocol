@@ -68,8 +68,12 @@ LLM assistance, and must human double-code at least 20% of eligible papers.
 ## Registration and status
 
 The protocol was prepared for OSF registration but was **not registered**, and no
-DOI was obtained. The study is therefore not preregistered. This is a pilot-based
-draft, not a completed full-scale study or a peer-reviewed paper.
+OSF DOI was obtained. The study is therefore not preregistered. A Zenodo DOI was
+assigned to this pilot-study preprint at deposit: 10.5281/zenodo.24245000. That
+DOI identifies the deposited preprint and its materials; it is not a registration
+DOI and does not make the study preregistered. See `ERRATA.md` for the correction
+of the unqualified “no DOI” wording in the frozen manuscript. This is a
+pilot-based draft, not a completed full-scale study or a peer-reviewed paper.
 
 ## Integrity
 
