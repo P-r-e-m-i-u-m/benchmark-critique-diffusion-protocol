@@ -3,6 +3,11 @@
 **Current verdict: NOT READY TO SUBMIT.** The manuscript is a pilot-based draft.
 The table distinguishes what exists from what is missing.
 
+**Registered Report Stage 1:** outline draft only; not submitted. The ICSME 2027
+RR deadline and EasyChair link were still TBA on 22 November 2026. See
+`manuscript/registered_report/icsme_esem_2027_stage1_outline.md` and
+`verification/registered_report_requirements.md`.
+
 ## 1. Scientific prerequisites
 
 | Item | Status | Evidence / action |
